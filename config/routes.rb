@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root "articles#index"
 
   # define other routes below
-  resources :articles
+  resources :articles do 
+    resources :comments
+  end
 end

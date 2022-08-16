@@ -1,0 +1,2 @@
+module PageIndexHelper
+end

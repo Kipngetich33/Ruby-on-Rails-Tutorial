@@ -6,33 +6,8 @@
 } %>
 <h2>Comments</h2>
 <hr>
-<%# add the comments show section %>
-<% @article.comments.each do | comment |%>
-    <p>
-        <strong>Commenter:</strong>
-        <%= comment.commenter %>
-    </p>
-
-    <p>
-        <strong>Comment</strong>
-        <%= comment.body %>
-    </p>
-<% end %>
+<%= render @article.comments %>
 
 <%# the add comment form is below %>
-<h2>Add Comment</h2>
-<hr>
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
-    <p>
-        <%= form.label :commenter %><br>
-        <%= form.text_field :commenter %>
-    </p>
-    <p>
-        <%= form.label :body %><br>
-        <%= form.text_area :body %>
-    <p>
-    <p>
-        <%= form.submit %>
-    </p>
-<% end %>
+<%= render 'comments/form' %>
 

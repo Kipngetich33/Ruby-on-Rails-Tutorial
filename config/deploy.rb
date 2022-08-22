@@ -6,6 +6,7 @@ set :repo_url, "https://github.com/Kipngetich33/Ruby-on-Rails-Tutorial.git"
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/ubuntu/#{fetch :application}"
+set :rbenv_path, '/home/ubuntu/.rbenv'
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
